@@ -1,8 +1,20 @@
-import { Box, Heading, Avatar, Text } from "@chakra-ui/react";
+import { Box, Heading, Avatar, Code } from "@chakra-ui/react";
 import useDeviceProportion from "utils/hooks/useDeviceProportion";
-import styles from "./Presentation.module.scss";
+import TypedString from "components/TypedString";
 
-export default function Presentation() {
+type PresentationProps = {
+  name: string;
+  nickname: string;
+  jobs: string[];
+  profile_image: string;
+};
+
+export default function Presentation({
+  name,
+  nickname,
+  jobs,
+  profile_image,
+}: PresentationProps) {
   const { isMobile } = useDeviceProportion();
 
   return (
@@ -13,8 +25,8 @@ export default function Presentation() {
       flexDirection={isMobile ? "column" : "row"}
     >
       <Avatar
-        name="Douglas da Silva Vulcano"
-        src="https://github.com/DouglasVulcano.png"
+        name={name}
+        src={profile_image}
         width={isMobile ? "200px" : "200px"}
         height={isMobile ? "200px" : "200px"}
         mb={isMobile ? 4 : 0}
@@ -22,13 +34,11 @@ export default function Presentation() {
       <Box ml={isMobile ? 0 : 5} mt={isMobile ? 2 : 0}>
         <Heading as="h1" fontSize={isMobile ? "2.2rem" : "3rem"}>
           Olá! Eu sou o<br />
-          Douglas Vulcano
+          {nickname}
         </Heading>
-        <Text fontSize={isMobile ? "1.2rem" : "1.5rem"} mt={2}>
-          <span className={styles.typing_animation}>
-            Desenvolvedor Front-end
-          </span>
-        </Text>
+        <Code mt={5} fontSize={20}>
+          <TypedString strings={jobs} />
+        </Code>
       </Box>
     </Box>
   );

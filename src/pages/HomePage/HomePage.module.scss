@@ -1,0 +1,31 @@
+/* Adicione isso ao seu arquivo HomePage.module.scss */
+@keyframes cursorGlow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Aplicar o efeito de brilho ao cursor */
+.cursor-glow {
+  cursor: none; /* Remova o cursor padrão */
+  position: absolute;
+  width: 20px; /* Ajuste o tamanho do efeito de brilho */
+  height: 20px; /* Ajuste o tamanho do efeito de brilho */
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.7) 60%
+  );
+  border-radius: 50%;
+  animation: cursorGlow 1s infinite; /* Adicione o efeito de brilho */
+  pointer-events: none; /* Evite que o efeito de brilho interfira com elementos clicáveis */
+}
