@@ -1,4 +1,5 @@
-import { Text, Box, Heading } from "@chakra-ui/react";
+import { Text, Box } from "@chakra-ui/react";
+import SideTitle from "components/SideTitle";
 
 type AboutMeProps = {
   description: string[];
@@ -7,9 +8,7 @@ type AboutMeProps = {
 export default function AboutMe({ description }: AboutMeProps) {
   return (
     <Box>
-      <Heading size="xs" textTransform="uppercase">
-        Sobre mim
-      </Heading>
+      <SideTitle title="Sobre Mim" />
       {description.map((description, index) => (
         <Text pt="2" fontSize="sm" key={index}>
           {description}

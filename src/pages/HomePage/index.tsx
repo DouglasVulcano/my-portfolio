@@ -24,6 +24,7 @@ export default function HomePage() {
         company: "Flip.net | Infotechnology",
         period: "Março de 2023 - Atualmente",
         description: "",
+        icons: ["vuejs", "typescript", "laravel"],
       },
       {
         title: "Desenvolvedor Júnior",
@@ -31,13 +32,7 @@ export default function HomePage() {
         period: "Julho de 2022 - Março de 2023",
         description:
           "Responsável pelo desenvolvimento e implementação de novas features dentro da plataforma, com foco em melhoria na UX. Nesse período fui encarregado em desenvolver o frontend dos módulos de E-learning e Missões da plataforma Flipnet utilizando Vue.js/Quasar Framework, TypeScript além de bibliotecas como Pinia e Vuex.",
-      },
-      {
-        title: "Estagiário",
-        company: "Flip.net | Infotechnology",
-        period: "Novembro de 2021 - Julho de 2022",
-        description:
-          "Encarregado em realizar suporte ao cliente e densenvolvimento de pequenas features dentro da plataforma.",
+        icons: ["vuejs", "typescript", "laravel"],
       },
     ],
   };
@@ -45,11 +40,16 @@ export default function HomePage() {
   return (
     <React.Fragment>
       <Presentation {...data} />
+
+      <Box mt={12}>
+        <Container maxW="container.lg" textAlign="end">
+          Menu
+        </Container>
+      </Box>
+
       <Box mt={12}>
         <Container maxW="container.lg" textAlign="justify">
-          <Box>
-            <AboutMe {...data} />
-          </Box>
+          <AboutMe {...data} />
           <Box mt={10}>
             <Experience {...data} />
           </Box>
