@@ -1,8 +1,9 @@
 import { Container, Box } from "@chakra-ui/react";
-import Presentation from "components/Presentation";
-import Experience from "components/Experience";
-import AboutMe from "components/AboutMe";
+import Presentation from "pages/HomePage/sides/Presentation";
+import Experience from "pages/HomePage/sides/Experience";
+import AboutMe from "pages/HomePage/sides/AboutMe";
 import React from "react";
+import Projects from "./sides/Projects";
 
 export default function HomePage() {
   const data = {
@@ -37,6 +38,13 @@ export default function HomePage() {
     ],
   };
 
+  const redirectSide = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <React.Fragment>
       <Presentation {...data} />
@@ -44,6 +52,9 @@ export default function HomePage() {
       <Box mt={12}>
         <Container maxW="container.lg" textAlign="end">
           Menu
+          <button onClick={() => redirectSide("projects-side")}>
+            Projetos
+          </button>
         </Container>
       </Box>
 
@@ -52,6 +63,9 @@ export default function HomePage() {
           <AboutMe {...data} />
           <Box mt={10}>
             <Experience {...data} />
+          </Box>
+          <Box mt={10}>
+            <Projects />
           </Box>
         </Container>
       </Box>

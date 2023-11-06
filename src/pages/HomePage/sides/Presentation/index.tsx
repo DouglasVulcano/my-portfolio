@@ -1,4 +1,4 @@
-import { Box, Heading, Avatar, Code } from "@chakra-ui/react";
+import { Box, Heading, Avatar, Code, Text } from "@chakra-ui/react";
 import useDeviceProportion from "utils/hooks/useDeviceProportion";
 import TypedString from "components/TypedString";
 
@@ -33,7 +33,10 @@ export default function Presentation({
       />
       <Box ml={isMobile ? 0 : 5} mt={isMobile ? 2 : 0}>
         <Heading as="h1" fontSize={isMobile ? "2.2rem" : "3rem"}>
-          Olá! Eu sou o<br />
+          <Box display="flex">
+            <Text color={"green.200"}>Olá!</Text>
+            <Text ml={2}>Eu sou o</Text>
+          </Box>
           {nickname}
         </Heading>
         <Code mt={5} fontSize={20}>

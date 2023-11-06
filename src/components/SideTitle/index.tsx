@@ -3,16 +3,18 @@ import { BiSolidRightArrow } from "react-icons/bi";
 
 type SideTitleProps = {
   title: string;
+  titleId: string;
 };
 
-export default function SideTitle({ title }: SideTitleProps) {
+export default function SideTitle({ title, titleId }: SideTitleProps) {
   return (
     <Heading
+      mb={2}
       size="xs"
-      textTransform="uppercase"
+      id={titleId}
       fontSize={20}
       display={"flex"}
-      mb={2}
+      textTransform="uppercase"
     >
       <BiSolidRightArrow />
       <span style={{ marginLeft: 5, marginTop: -2 }}>{title}</span>

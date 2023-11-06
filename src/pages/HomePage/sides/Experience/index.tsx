@@ -18,7 +18,7 @@ type ExperienceProps = {
 export default function Experience({ experiences }: ExperienceProps) {
   return (
     <Box>
-      <SideTitle title="Últimas Experiência" />
+      <SideTitle title="Últimas Experiências" titleId="experiences-side" />
       <Card backgroundColor={"#0c121c"} color={"#ffffff"}>
         <Stack divider={<StackDivider />} spacing="4">
           {experiences.map((experience, index) => (
