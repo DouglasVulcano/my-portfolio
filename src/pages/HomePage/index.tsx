@@ -4,6 +4,7 @@ import Experience from "pages/HomePage/sides/Experience";
 import AboutMe from "pages/HomePage/sides/AboutMe";
 import React from "react";
 import Projects from "./sides/Projects";
+import Menu from "components/Menu";
 
 export default function HomePage() {
   const data = {
@@ -38,28 +39,28 @@ export default function HomePage() {
     ],
   };
 
-  const redirectSide = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const menus = [
+    {
+      id: "about-me-side",
+      label: "Sobre mim",
+    },
+    {
+      id: "experience-side",
+      label: "Experiência",
+    },
+    {
+      id: "projects-side",
+      label: "Projetos",
+    },
+  ];
 
   return (
     <React.Fragment>
       <Presentation {...data} />
 
       <Box mt={12}>
-        <Container maxW="container.lg" textAlign="end">
-          Menu
-          <button onClick={() => redirectSide("projects-side")}>
-            Projetos
-          </button>
-        </Container>
-      </Box>
-
-      <Box mt={12}>
         <Container maxW="container.lg" textAlign="justify">
+          <Menu menuIds={menus} />
           <AboutMe {...data} />
           <Box mt={10}>
             <Experience {...data} />
