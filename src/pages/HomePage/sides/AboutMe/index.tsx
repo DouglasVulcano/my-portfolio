@@ -1,7 +1,7 @@
 import { Text, Box } from "@chakra-ui/react";
 import SideTitle from "components/SideTitle";
 
-type AboutMeProps = {
+export type AboutMeProps = {
   description: string[];
 };
 

@@ -2,7 +2,7 @@ import { Box, Heading, Avatar, Code, Text } from "@chakra-ui/react";
 import useDeviceProportion from "utils/hooks/useDeviceProportion";
 import TypedString from "components/TypedString";
 
-type PresentationProps = {
+export type PresentationProps = {
   name: string;
   nickname: string;
   jobs: string[];
